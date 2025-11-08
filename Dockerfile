@@ -18,7 +18,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 COPY . /summarizator
 
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --locked --no-dev
+    uv sync --locked --compile-bytecode --link-mode=copy --no-dev
 
 ENV PATH="/summarizator/.venv/bin:$PATH"
 
