@@ -1,0 +1,16 @@
+services:
+  summarizator-app:
+    image: summarizator
+    build:
+      context: .
+    ports:
+      - "8502:8502"
+    restart: on-failure
+    env_file:
+      - .env
+    depends_on:
+      - summarizator-cache
+
+  summarizator-cache:
+    image: redis:8-alpine3.22
+    restart: on-failure

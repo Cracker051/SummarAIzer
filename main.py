@@ -2,6 +2,8 @@ import os
 
 import streamlit as st
 
+from const import DEBUG
+
 
 st.title("Text Summarizer Comparisons")
 
@@ -33,6 +35,34 @@ for file in sorted(os.listdir(ABSTRACTIVE_DIR)):
     abstractive_pages.append(st.Page(file_path, title=page_name))
 
 st.set_page_config(page_title="Summarization App", page_icon="📚", layout="wide")
+
+if not DEBUG:
+    st.markdown(
+        """
+        <style> 
+            .reportview-container { 
+                margin-top: -2em; 
+            }
+            
+            #MainMenu {
+                visibility: hidden;
+            }
+
+            .stDeployButton {
+                display:none;
+            }
+            
+            footer {
+                visibility: hidden;
+            }
+            
+            #stDecoration {
+                display:none;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
 navigation_groups = {
     "": general_pages,

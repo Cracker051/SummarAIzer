@@ -5,8 +5,10 @@ from typing import Any, Callable
 
 from redis import Redis
 
+from const import REDIS_URL
 
-RedisCache = Redis()
+
+RedisCache = Redis.from_url(REDIS_URL)
 
 
 def key_generator(*args, **kwargs) -> str:
