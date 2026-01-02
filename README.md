@@ -1,4 +1,4 @@
-# Summariztor
+# SummarAIzer
 
 This repository contains the implementation of a project focused on the comparative analysis of automatic text summarization methods. The system evaluates extractive and abstractive approaches using 12 distinct algorithms within a unified web interface.
 
